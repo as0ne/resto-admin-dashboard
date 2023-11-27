@@ -1,4 +1,3 @@
 import logo from "./logo.webp";
-import avatar from "./avatar1.png";
-
-export { logo, avatar };
+import profilPic from "./avatar2.png";
+export { logo, profilPic };
