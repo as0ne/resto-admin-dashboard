@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Image from "next/image";
 import "./globals.css";
 import SideBarNav from "./components/SideBarNav";
-import { profilPic } from "@/public/images";
 import { SearchIcon } from "@/public/icons";
 import Avatar from "./components/Avatar";
+import Header from "./components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,13 +29,7 @@ export default function RootLayout({
                 Aujourd&apos;hui:{" "}
                 <span className="text-teal-500 text-base">19 Septembre</span>
               </h1>
-              <div className="flex items-center justify-between px-14">
-                <Avatar />
-                <form className="flex items-center justify-between w-[450px] bg-white px-2 h-10 rounded-xl">
-                  <SearchIcon />
-                  <input type="text" className="w-[calc(100%-34px)]" />
-                </form>
-              </div>
+              <Header />
             </div>
             {children}
           </main>
