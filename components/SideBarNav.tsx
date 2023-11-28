@@ -1,6 +1,8 @@
-import React, { ReactNode } from "react";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import classnames from "classnames";
 import { logo } from "@/public/images";
 import {
   CategoryIcon,
@@ -9,8 +11,10 @@ import {
   AccountSettingsIcon,
   LogOutIcon,
 } from "@/public/icons";
+import { usePathname } from "next/navigation";
 
 const SideBarNav = () => {
+  const path = usePathname();
   const links = [
     {
       href: "/categories",
@@ -45,7 +49,7 @@ const SideBarNav = () => {
   ];
 
   return (
-    <aside className="w-[250px] h-full flex flex-col items-center">
+    <aside className="hidden md:w-[250px] h-full md:flex flex-col items-center">
       <Link href="/">
         <Image
           width={350}
@@ -59,7 +63,9 @@ const SideBarNav = () => {
           <Link
             key={link.href}
             href={link.href}
-            className="flex items-center gap-4 bg-white mb-1 h-14"
+            className={`flex items-center bg-${
+              path === link.href ? "sky-100" : "white"
+            } gap-4 h-14`}
           >
             {link.icon}
             <p>{link.label}</p>

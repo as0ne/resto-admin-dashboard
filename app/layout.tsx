@@ -18,10 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-white`}>
         <div className="h-screen w-screen flex items-center justify-between bg-white overflow-hidden">
           <SideBarNav />
-          <main className="w-[calc(100%-250px)] h-full bg-sky-100 shrink-0">
+          <main className="w-[calc(100%-250px)] h-full bg-sky-100 shrink-0 ">
             <div className="w-full h-32">
               <h1 className="text-right bg-white p-2">
                 Aujourd&apos;hui:{" "}
