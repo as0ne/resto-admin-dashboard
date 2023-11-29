@@ -15,9 +15,9 @@ const AddCategory = ({ path, label, Icon, color }: Props) => {
   return (
     <button
       onClick={() => router.push(path)}
-      className={`flex items-center gap-2 ${color} text-white text-base font-semibold rounded-md`}
+      className={`w-full flex items-center gap-2 ${color} text-white text-base font-semibold rounded-md p-2`}
     >
-      <Icon className="" />
+      <Icon className="text-xl" />
       {label}
     </button>
   );

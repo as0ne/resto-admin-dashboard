@@ -29,9 +29,9 @@ const CategoriesPage = () => {
 
   return (
     <div className="w-full h-[calc(100%-128px)] bg-sky-100 px-8 mt-8">
-      <div className="w-[300px] h-10 flex  justify-between items-center ml-auto">
+      <div className="w-[300px] flex gap-10 items-center ml-auto">
         <AddCategory
-          Icon={AddIcon}
+          Icon={EditIcon}
           label="Modifier"
           color="bg-orange-400"
           path="/categories"
