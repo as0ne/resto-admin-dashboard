@@ -3,15 +3,22 @@
 import { AddIcon } from "@/public/icons";
 import { useRouter } from "next/navigation";
 
-const AddCategory = () => {
+interface Props {
+  path: string;
+  label: string;
+  color: "bg-teal-700" | "bg-orange-400";
+  Icon: any;
+}
+
+const AddCategory = ({ path, label, Icon, color }: Props) => {
   const router = useRouter();
   return (
     <button
-      onClick={() => router.push("/categories/ajouter")}
-      className="w-36 flex items-center gap-2 bg-teal-700 text-white text-base font-semibold rounded-md"
+      onClick={() => router.push(path)}
+      className={`flex items-center gap-2 ${color} text-white text-base font-semibold rounded-md`}
     >
-      <AddIcon />
-      Ajouter
+      <Icon className="" />
+      {label}
     </button>
   );
 };

@@ -1,3 +1,5 @@
+"use client";
+
 import AddCategory from "@/components/AddCategory";
 import { AddIcon, EditIcon } from "@/public/icons";
 import {
@@ -26,15 +28,23 @@ const CategoriesPage = () => {
   ];
 
   return (
-    <div className="w-full h-[calc(100%-128px)] bg-sky-100 px-8">
-      <div className="w-[400px] h-10 flex  justify-between items-center ml-auto">
-        <button className="w-36 flex items-center gap-2 bg-orange-400 text-white text-base font-semibold rounded-md">
-          <EditIcon />
-          Modifier
-        </button>
-        <AddCategory />
+    <div className="w-full h-[calc(100%-128px)] bg-sky-100 px-8 mt-8">
+      <div className="w-[300px] h-10 flex  justify-between items-center ml-auto">
+        <AddCategory
+          Icon={AddIcon}
+          label="Modifier"
+          color="bg-orange-400"
+          path="/categories"
+        />
+
+        <AddCategory
+          Icon={AddIcon}
+          label="Ajouter"
+          color="bg-teal-700"
+          path="/categories/ajouter"
+        />
       </div>
-      <div className="w-full h-[calc(100%-40px)] overflow-y-auto mt-8 grid md:grid-cols-4 gap-14 p-4">
+      <div className="w-full h-[calc(100vh-235px)] gap-14 overflow-y-auto mt-8 grid grid-cols-4 pb-5">
         {items.map((item) => (
           <div
             className="bg-slate-100 rounded-lg h-40 flex flex-col justify-center items-center"

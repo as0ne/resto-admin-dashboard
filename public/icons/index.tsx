@@ -1,4 +1,6 @@
-import React from "react";
+interface IconProps {
+  className?: string;
+}
 
 export const CategoryIcon = () => {
   return (
@@ -86,7 +88,7 @@ export const LogOutIcon = () => {
 
 // #CFD1D2
 
-export const SearchIcon = () => {
+export const SearchIcon = ({ className }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +96,7 @@ export const SearchIcon = () => {
       viewBox="0 -960 960 960"
       width="32"
       fill="grey"
-      className="p-1"
+      className={className}
     >
       <path d="M781.692-136.924 530.461-388.155q-30 24.769-69 38.769t-80.692 14q-102.55 0-173.582-71.014t-71.032-173.537q0-102.524 71.014-173.601 71.014-71.076 173.538-71.076 102.523 0 173.6 71.032T625.384-580q0 42.846-14.385 81.846-14.385 39-38.385 67.846l251.231 251.231-42.153 42.153Zm-400.923-258.46q77.308 0 130.962-53.654Q565.385-502.692 565.385-580q0-77.308-53.654-130.962-53.654-53.654-130.962-53.654-77.308 0-130.962 53.654Q196.154-657.308 196.154-580q0 77.308 53.653 130.962 53.654 53.654 130.962 53.654Z" />
     </svg>
@@ -129,7 +131,7 @@ export const EditIcon = () => {
   );
 };
 
-export const AddIcon = () => {
+export const AddIcon = ({ className }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -137,6 +139,7 @@ export const AddIcon = () => {
       viewBox="0 -960 960 960"
       width="20"
       fill="white"
+      className={className}
     >
       <path d="M444-444H240v-72h204v-204h72v204h204v72H516v204h-72v-204Z" />
     </svg>
@@ -165,6 +168,70 @@ export const ImageIcon = () => {
       width="150"
     >
       <path d="M189.058-113.304q-30.994 0-53.374-22.38-22.38-22.38-22.38-53.374v-581.884q0-31.06 22.38-53.486 22.38-22.427 53.374-22.427h581.884q31.06 0 53.486 22.427 22.427 22.426 22.427 53.486v581.884q0 30.994-22.427 53.374-22.426 22.38-53.486 22.38H189.058Zm0-75.754h581.884v-581.884H189.058v581.884Zm44.848-86.551h492.855l-151.428-203.71-128 167.334-92-124.667-121.427 161.043Zm-44.848 86.551v-581.884 581.884Z" />
+    </svg>
+  );
+};
+
+export const PersonIcon = ({ className }: IconProps) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="48"
+      viewBox="0 -960 960 960"
+      width="48"
+      className={className}
+      fill="grey"
+    >
+      <path d="M479.951-484.109q-68.679 0-112.304-43.625t-43.625-112.305q0-68.679 43.625-112.353 43.625-43.674 112.304-43.674t112.473 43.674q43.794 43.674 43.794 112.353 0 68.68-43.794 112.305t-112.473 43.625ZM154.022-219.043v-32.327q0-39.434 19.868-67.969 19.869-28.534 51.48-43.291 67.478-30.24 129.695-45.359 62.218-15.12 124.871-15.12 63.131 0 124.793 15.62 61.662 15.619 128.901 44.859 32.674 14.478 52.631 43.032 19.957 28.555 19.957 68.228v32.327q0 28.347-19.837 48.239-19.836 19.891-48.533 19.891H222.152q-28.599 0-48.365-19.891-19.765-19.892-19.765-48.239Z" />
+    </svg>
+  );
+};
+
+export const AddressIcon = ({ className }: IconProps) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="18px"
+      viewBox="0 0 24 24"
+      width="18px"
+      fill="#14b8a6"
+      className={className}
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z" />
+      <circle cx="12" cy="9" r="2.5" />
+    </svg>
+  );
+};
+
+export const PhoneIcon = ({ className }: IconProps) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="18px"
+      viewBox="0 0 24 24"
+      width="18px"
+      fill="#14b8a6"
+      className={className}
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z" />
+    </svg>
+  );
+};
+
+export const MailIcon = ({ className }: IconProps) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="18px"
+      viewBox="0 0 24 24"
+      width="18px"
+      fill="#14b8a6"
+      className={className}
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />
     </svg>
   );
 };

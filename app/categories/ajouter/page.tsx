@@ -1,13 +1,19 @@
+"use client";
+
 import { BackIcon, ImageIcon } from "@/public/icons";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const AddCategory = () => {
+  const router = useRouter();
   return (
     <div className="w-full bg-sky-100 px-14 mt-8">
-      <Link href="/categories" className="flex items-center gap-2 mb-2">
+      <button
+        onClick={() => router.back()}
+        className="flex items-center gap-2 mb-2"
+      >
         <BackIcon />
         <p className="text-base text-black font-semibold">Nouvelle catégorie</p>
-      </Link>
+      </button>
       <form className="w-full h-full">
         <div className="w-full flex items-stretch justify-between mb-20">
           <div className="w-4/5">
