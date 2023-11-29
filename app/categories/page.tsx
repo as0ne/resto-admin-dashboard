@@ -1,3 +1,4 @@
+import AddCategory from "@/components/AddCategory";
 import { AddIcon, EditIcon } from "@/public/icons";
 import {
   cat1,
@@ -31,10 +32,7 @@ const CategoriesPage = () => {
           <EditIcon />
           Modifier
         </button>
-        <button className="w-36 flex items-center gap-2 bg-teal-700 text-white text-base font-semibold rounded-md">
-          <AddIcon />
-          Ajouter
-        </button>
+        <AddCategory />
       </div>
       <div className="w-full h-[calc(100%-40px)] overflow-y-auto mt-8 grid md:grid-cols-4 gap-14 p-4">
         {items.map((item) => (
