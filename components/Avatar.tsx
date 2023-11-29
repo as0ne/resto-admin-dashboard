@@ -7,9 +7,11 @@ const Avatar = () => {
     <div className="flex items-center gap-2">
       <Image
         width={80}
+        height={80}
         src={profilPic}
         alt="avatar"
-        className="rounded-full aspect-square"
+        priority
+        className="rounded-full"
       />
       <p className="text-base text-black font-semibold">
         Mohamed <br />

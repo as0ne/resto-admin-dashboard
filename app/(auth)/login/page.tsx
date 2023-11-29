@@ -22,7 +22,7 @@ const Login = () => {
           </Link>
 
           <Link href="#" className="underline text-base text-white">
-            Conditions d’utilisateurs
+            Conditions d&apos;utilisateurs
           </Link>
         </div>
 

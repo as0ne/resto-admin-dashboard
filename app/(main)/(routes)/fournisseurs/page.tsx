@@ -103,17 +103,17 @@ const Supplier = () => {
             </tr>
           </thead>
           <tbody>
-            {suppliers.map((sup) => (
-              <Link
-                href={`/categories/${sup.name}`}
-                key={sup.phone}
+            {suppliers.map((sup, idx) => (
+              <tr
+                //href={`/categories/${sup.name}`}
+                key={idx}
                 className="w-full h-14 flex items-center justify-between bg-white px-2  mb-8"
               >
                 <td>{sup.name}</td>
                 <td>{sup.address}</td>
                 <td>{sup.mail}</td>
                 <td>{sup.phone}</td>
-              </Link>
+              </tr>
             ))}
           </tbody>
         </table>
