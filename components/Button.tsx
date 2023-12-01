@@ -9,7 +9,7 @@ interface Props {
   Icon: any;
 }
 
-const AddCategory = ({ path, label, Icon, color }: Props) => {
+const Button = ({ path, label, Icon, color }: Props) => {
   const router = useRouter();
   return (
     <button
@@ -22,4 +22,4 @@ const AddCategory = ({ path, label, Icon, color }: Props) => {
   );
 };
 
-export default AddCategory;
+export default Button;

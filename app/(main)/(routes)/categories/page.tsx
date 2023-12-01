@@ -1,6 +1,6 @@
 "use client";
 
-import AddCategory from "@/components/AddCategory";
+import AddCategory from "@/components/Button";
 import { AddIcon, EditIcon } from "@/public/icons";
 import {
   cat1,
