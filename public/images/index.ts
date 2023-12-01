@@ -1,4 +1,4 @@
-import logo from "./logo.png";
+import logo from "./Logo.png";
 import profilPic from "./avatar2.png";
 import cat1 from "./img1.png";
 import cat2 from "./img2.png";
