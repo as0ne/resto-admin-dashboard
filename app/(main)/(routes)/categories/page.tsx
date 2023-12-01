@@ -28,8 +28,8 @@ const CategoriesPage = () => {
   ];
 
   return (
-    <div className="w-full h-[calc(100%-128px)] bg-sky-100 px-8 mt-8">
-      <div className="w-[300px] flex gap-10 items-center ml-auto">
+    <div className="w-full h-[calc(100vh-128px)] bg-sky-100 px-8 mt-2">
+      <div className="w-full flex justify-start flex-row-reverse lg:flex-row lg:w-[400px] gap-14 lg:ml-auto">
         <AddCategory
           Icon={EditIcon}
           label="Modifier"
@@ -44,7 +44,7 @@ const CategoriesPage = () => {
           path="/categories/ajouter"
         />
       </div>
-      <div className="w-full h-[calc(100vh-235px)] gap-14 overflow-y-auto mt-8 grid grid-cols-4 pb-5">
+      <div className="w-full lg:h-[calc(100vh-335px)] h-[calc(100vh-235px)] gap-10 bg-white rounded-md p-4 pb-2 lg:gap-14 overflow-y-auto mt-8 grid grid-cols-2 lg:grid-cols-4 pb-1 lg:pb-5">
         {items.map((item) => (
           <div
             className="bg-slate-100 rounded-lg h-40 flex flex-col justify-center items-center"

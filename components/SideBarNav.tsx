@@ -48,13 +48,14 @@ const SideBarNav = () => {
   ];
 
   return (
-    <aside className="hidden md:w-[250px] h-full md:flex flex-col items-center">
+    <aside className="hidden lg:w-[350px] lg:h-full lg:flex flex-col items-center p-[2px]">
       <Link href="/">
         <Image
-          width={350}
+          width={400}
+          height={400}
           src={logo}
           alt="logo"
-          className="flex items-center justify-center w-80"
+          className="flex items-center justify-center mb-8"
         />
       </Link>
       <nav className="w-full divide-y-[1px] overflow-y-auto">

@@ -11,7 +11,7 @@ const Avatar = () => {
         src={profilPic}
         alt="avatar"
         priority
-        className="rounded-full"
+        className="rounded-full w-12 h-12 lg:w-20 lg:h-20"
       />
       <p className="text-base text-black font-semibold">
         Mohamed <br />

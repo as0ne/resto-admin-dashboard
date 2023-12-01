@@ -1,6 +1,5 @@
 "use client";
 
-import { AddIcon } from "@/public/icons";
 import { useRouter } from "next/navigation";
 
 interface Props {
@@ -15,10 +14,10 @@ const AddCategory = ({ path, label, Icon, color }: Props) => {
   return (
     <button
       onClick={() => router.push(path)}
-      className={`w-full flex items-center gap-2 ${color} text-white text-base font-semibold rounded-md p-2`}
+      className={`lg:w-full flex items-center gap-2 ${color} text-white text-base font-semibold rounded-md lg:p-1`}
     >
-      <Icon className="text-xl" />
-      {label}
+      <Icon className="w-12 h-12 lg:w-8 lg:h-8" />
+      <p className="hidden lg:flex">{label}</p>
     </button>
   );
 };

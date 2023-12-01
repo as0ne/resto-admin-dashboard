@@ -1,5 +1,6 @@
 interface IconProps {
   className?: string;
+  fill?: "#14b8a6" | "#ff880c" | "white" | "black";
 }
 
 export const CategoryIcon = () => {
@@ -95,7 +96,7 @@ export const SearchIcon = ({ className }: IconProps) => {
       height="32"
       viewBox="0 -960 960 960"
       width="32"
-      fill="grey"
+      fill="#14b8a6"
       className={className}
     >
       <path d="M781.692-136.924 530.461-388.155q-30 24.769-69 38.769t-80.692 14q-102.55 0-173.582-71.014t-71.032-173.537q0-102.524 71.014-173.601 71.014-71.076 173.538-71.076 102.523 0 173.6 71.032T625.384-580q0 42.846-14.385 81.846-14.385 39-38.385 67.846l251.231 251.231-42.153 42.153Zm-400.923-258.46q77.308 0 130.962-53.654Q565.385-502.692 565.385-580q0-77.308-53.654-130.962-53.654-53.654-130.962-53.654-77.308 0-130.962 53.654Q196.154-657.308 196.154-580q0 77.308 53.653 130.962 53.654 53.654 130.962 53.654Z" />
@@ -103,21 +104,22 @@ export const SearchIcon = ({ className }: IconProps) => {
   );
 };
 
-export const MenuIcon = () => {
+export const MenuIcon = ({ className, fill }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height="24"
       viewBox="0 -960 960 960"
       width="24"
-      fill="#ff880c"
+      fill={fill}
+      className={className}
     >
       <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
     </svg>
   );
 };
 
-export const EditIcon = () => {
+export const EditIcon = ({ className, fill }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -125,6 +127,7 @@ export const EditIcon = () => {
       viewBox="0 -960 960 960"
       width="20"
       fill="white"
+      className={className}
     >
       <path d="M216-216h51l375-375-51-51-375 375v51Zm-72 72v-153l498-498q11-11 23.836-16 12.836-5 27-5T720-811q13 5 24 16l51 51q11 11 16 24t5 26.542q0 14.444-5.022 27.534Q805.957-652.833 795-642L297-144H144Zm600-549-51-51 51 51Zm-127.947 76.947L591-642l51 51-25.947-25.053Z" />
     </svg>
