@@ -1,6 +1,6 @@
 "use client";
 
-import AddCategory from "@/components/Button";
+import Button from "@/components/Button";
 import { AddIcon, EditIcon } from "@/public/icons";
 import {
   cat1,
@@ -30,24 +30,24 @@ const CategoriesPage = () => {
   return (
     <div className="w-full h-[calc(100vh-128px)] bg-sky-100 px-8 mt-2">
       <div className="w-full flex justify-start flex-row-reverse lg:flex-row lg:w-[400px] gap-14 lg:ml-auto">
-        <AddCategory
+        <Button
           Icon={EditIcon}
           label="Modifier"
           color="bg-orange-400"
           path="/categories"
         />
 
-        <AddCategory
+        <Button
           Icon={AddIcon}
           label="Ajouter"
           color="bg-teal-700"
           path="/categories/ajouter"
         />
       </div>
-      <div className="w-full lg:h-[calc(100vh-335px)] h-[calc(100vh-235px)] gap-10 bg-white rounded-md p-4 pb-2 lg:gap-14 overflow-y-auto mt-8 grid grid-cols-2 lg:grid-cols-4 pb-1 lg:pb-5">
+      <div className="w-full lg:h-[calc(100vh-290px)] h-[calc(100vh-215px)] gap-10 bg-white rounded-md p-4 lg:gap-14 overflow-y-auto mt-8 grid grid-cols-2 lg:grid-cols-4 pb-1 lg:pb-2 lg:bg-sky-100">
         {items.map((item) => (
           <div
-            className="bg-slate-100 rounded-lg h-40 flex flex-col justify-center items-center"
+            className="bg-slate-100 rounded-lg h-48 flex flex-col justify-center items-center shadow-md shadow-gray-200"
             key={item.name}
           >
             <Image src={item.img} alt={`${item.name} image`} />
@@ -57,7 +57,7 @@ const CategoriesPage = () => {
 
         {items.map((item) => (
           <div
-            className="bg-slate-100 rounded-lg h-48 flex flex-col justify-center items-center"
+            className="bg-slate-100 rounded-lg h-48 flex flex-col justify-center items-center shadow-md shadow-gray-200"
             key={item.name}
           >
             <Image src={item.img} alt={`${item.name} image`} />
