@@ -8,5 +8,24 @@ import cat5 from "./img5.png";
 import cat6 from "./img6.png";
 import cat7 from "./img7.png";
 import cat8 from "./img8.png";
+import achibest from "./achibest.png";
+import blegourmet from "./blegourmet.png";
+import marjane from "./marjane.png";
+import carrefour from "./carrefour.png";
 
-export { logo, profilPic, cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8 };
+export {
+  achibest,
+  blegourmet,
+  marjane,
+  carrefour,
+  logo,
+  profilPic,
+  cat1,
+  cat2,
+  cat3,
+  cat4,
+  cat5,
+  cat6,
+  cat7,
+  cat8,
+};

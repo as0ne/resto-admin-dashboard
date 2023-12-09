@@ -6,13 +6,15 @@ import {
   MailIcon,
   PhoneIcon,
 } from "@/public/icons";
-import React from "react";
+import { achibest, blegourmet, carrefour, marjane } from "@/public/images";
+import Image from "next/image";
 
 const Supplier = () => {
   const items = [
     {
       id: 1,
       name: "Achibest",
+      logo: achibest,
       address: "Essalam Agadir",
       mail: "mohammed@gmail.com",
       phone: "+212 66 55 44 33",
@@ -21,6 +23,7 @@ const Supplier = () => {
     {
       id: 2,
       name: "Blé Gourmet",
+      logo: blegourmet,
       address: "Founty Agadir",
       mail: "mohammed@gmail.com",
       phone: "+212 66 55 44 33",
@@ -29,6 +32,7 @@ const Supplier = () => {
     {
       id: 3,
       name: "Marjane",
+      logo: marjane,
       address: "Emi-Ouaddar",
       mail: "mohammed@gmail.com",
       phone: "+212 66 55 44 33",
@@ -37,6 +41,7 @@ const Supplier = () => {
     {
       id: 4,
       name: "Carrefour",
+      logo: carrefour,
       address: "Corniche Agadir",
       mail: "mohammed@gmail.com",
       phone: "+212 66 55 44 33",
@@ -45,22 +50,15 @@ const Supplier = () => {
     {
       id: 6,
       name: "Marjane",
+      logo: marjane,
       address: "Founty Agadir",
-      mail: "mohammed@gmail.com",
-      phone: "+212 66 55 44 33",
-    },
-
-    {
-      id: 7,
-      name: "Sodivias",
-      address: "Agadir",
       mail: "mohammed@gmail.com",
       phone: "+212 66 55 44 33",
     },
   ];
   return (
-    <div className="w-full px-8">
-      <div className="w-full flex items-center justify-between lg:justify-end mb-6">
+    <div className="w-full">
+      <div className="w-full flex items-center justify-between lg:justify-end mb-6 px-8">
         <button className="flex items-center gap-1 lg:hidden">
           <BackIcon />
           <p className="text-base text-black font-normal">
@@ -76,7 +74,7 @@ const Supplier = () => {
       </div>
 
       {/** Indicators */}
-      <div className="hidden lg:flex items-center justify-between">
+      <div className="hidden lg:flex items-center justify-between px-8">
         <Indicator
           count={5}
           description="Nouveaux Fournisseurs"
@@ -92,9 +90,9 @@ const Supplier = () => {
         <Indicator count={5} description="Fournisseurs en attente" />
       </div>
 
-      {/**List of itempliers */}
+      {/**List of suppliers */}
       {/** Desktop */}
-      <div className="hidden lg:block w-full h-[calc(100vh-295px)] overflow-y-auto pb-10">
+      <div className="hidden lg:block w-full h-[calc(100vh-295px)] overflow-y-auto pb-10 px-8">
         <table className="w-full divide-y-[35px] divide-sky-100 table-auto">
           <thead className="w-full bg-white">
             <tr className="w-full flex items-center justify-between py-2">
@@ -134,7 +132,45 @@ const Supplier = () => {
                 key={idx}
                 className="w-full h-14 flex items-center justify-between bg-white px-2  mb-8"
               >
-                <td>{item.name}</td>
+                <td>
+                  <div className="flex items-center gap-3">
+                    <input type="checkbox" className="block h-6 w-12" />
+                    <Image
+                      src={item.logo}
+                      width={54}
+                      height={54}
+                      alt="restorant logo"
+                      priority
+                      className="rounded-full aspect-auto border-[1px] border-orange-300"
+                    />
+                    <p>{item.name}</p>
+                  </div>
+                </td>
+                <td>{item.address}</td>
+                <td>{item.mail}</td>
+                <td>{item.phone}</td>
+              </tr>
+            ))}
+
+            {items.map((item, idx) => (
+              <tr
+                key={idx}
+                className="w-full h-14 flex items-center justify-between bg-white px-2  mb-8"
+              >
+                <td>
+                  <div className="flex items-center gap-3">
+                    <input type="checkbox" className="block h-6 w-12" />
+                    <Image
+                      src={item.logo}
+                      width={54}
+                      height={54}
+                      alt="restorant logo"
+                      priority
+                      className="rounded-full aspect-auto border-[1px] border-orange-300"
+                    />
+                    <p>{item.name}</p>
+                  </div>
+                </td>
                 <td>{item.address}</td>
                 <td>{item.mail}</td>
                 <td>{item.phone}</td>
@@ -145,13 +181,22 @@ const Supplier = () => {
       </div>
 
       {/** Mobile & Tablets */}
-      <div className="w-full h-[calc(100vh-150px)] lg:hidden overflow-y-auto pb-14">
+      <div className="w-full h-[calc(100vh-210px)] lg:hidden overflow-y-auto pb-16 px-1">
         {items.map((item) => (
           <div
             key={item.id}
             className="w-full bg-white flex flex-col items-start gap-2 rounded-xl p-2 mb-4"
           >
-            <p>{item.name}</p>
+            <div className="flex items-center gap-2 bg-white">
+              <Image
+                src={item.logo}
+                alt="restorant"
+                width={54}
+                height={54}
+                className="rounded-full border-[1px] border-orange-200"
+              />
+              <p>{item.name}</p>
+            </div>
             <div className="w-full flex items-center justify-between">
               <div className="flex items-center gap-1">
                 <AddressIcon />
@@ -174,7 +219,16 @@ const Supplier = () => {
             key={item.id}
             className="w-full bg-white flex flex-col items-start gap-2 rounded-xl p-2 mb-4"
           >
-            <p>{item.name}</p>
+            <div className="flex items-center gap-2 bg-white">
+              <Image
+                src={item.logo}
+                alt="restorant"
+                width={54}
+                height={54}
+                className="rounded-full border-[1px] border-orange-200"
+              />
+              <p>{item.name}</p>
+            </div>
             <div className="w-full flex items-center justify-around">
               <div className="flex items-center gap-1">
                 <AddressIcon />

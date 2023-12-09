@@ -11,7 +11,7 @@ const Header = () => {
       <div className="w-full flex items-center justify-center bg-white mb-8 py-8 lg:hidden">
         <Image width={300} height={300} src={logo} alt="Logo" />
       </div>
-      <div className="w-full flex items-center justify-between bg-sky-100 px-8">
+      <div className="w-full flex items-center justify-between bg-sky-100 px-8 lg:mt-5">
         <div className="flex items-center gap-8 flex-1">
           <button
             className="flex items-center lg:hidden"
