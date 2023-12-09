@@ -11,7 +11,7 @@ export default function RootLayout({
       <SideBarNav />
       <main className="w-full lg:w-[calc(100%-250px)] h-full bg-sky-100 shrink-0">
         <div className="w-full">
-          <h1 className="hidden lg:flex justify-end items-center lg:bg-white p-2">
+          <h1 className="hidden lg:flex justify-end items-center lg:bg-white p-4">
             Aujourd&apos;hui:{" "}
             <span className="text-teal-500 text-base">19 Septembre</span>
           </h1>

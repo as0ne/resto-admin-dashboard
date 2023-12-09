@@ -145,7 +145,7 @@ const Supplier = () => {
       </div>
 
       {/** Mobile & Tablets */}
-      <div className="w-full h-[calc(100vh-130px)] lg:hidden overflow-y-auto pb-14">
+      <div className="w-full h-[calc(100vh-150px)] lg:hidden overflow-y-auto pb-14">
         {items.map((item) => (
           <div
             key={item.id}

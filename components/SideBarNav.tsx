@@ -48,11 +48,11 @@ const SideBarNav = () => {
   ];
 
   return (
-    <aside className="hidden lg:w-[350px] lg:h-full lg:flex flex-col items-center p-[2px]">
-      <Link href="/">
+    <aside className="hidden lg:w-[350px] lg:h-full lg:flex flex-col items-center lg:py-4">
+      <Link href="/" className="p-4">
         <Image
-          width={400}
-          height={400}
+          width={300}
+          height={300}
           src={logo}
           alt="logo"
           className="flex items-center justify-center mb-8"
@@ -65,7 +65,7 @@ const SideBarNav = () => {
             href={link.href}
             className={`flex items-center bg-${
               path === link.href ? "sky-100" : "white"
-            } gap-4 h-14`}
+            } gap-4 p-4`}
           >
             {link.icon}
             <p>{link.label}</p>
