@@ -14,7 +14,7 @@ const AddCategory = () => {
         <BackIcon />
         <p className="text-base font-semibold text-black">Nouvelle Catégorie</p>
       </button>
-      <form className="w-full flex flex-col items-center h-[calc(100vh-200px)] pb5 overflow-y-auto">
+      <form className="w-full flex flex-col items-center max-h-[450px] pb-5 overflow-y-auto">
         <div className="w-full flex flex-col lg:flex-row items-center mb-12">
           <div className="w-full lg:w-3/5">
             <div className="w-full flex flex-col items-start mb-4">

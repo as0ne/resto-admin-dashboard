@@ -58,13 +58,13 @@ const Supplier = () => {
   ];
   return (
     <div className="w-full">
-      <div className="w-full flex items-center justify-between lg:justify-end mb-6 px-8">
-        <button className="flex items-center gap-1 lg:hidden">
+      <div className="w-full flex items-center justify-end lg:justify-end mb-6 px-8">
+        {/*<button className="flex items-center gap-1 lg:hidden">
           <BackIcon />
           <p className="text-base text-black font-normal">
             Liste des fournisseurs
           </p>
-        </button>
+        </button>*/}
         <button className="bg-teal-700 flex items-center rounded-md lg:p-1 gap-1">
           <AddIcon className="w-12 h-12 lg:w-8 lg:h-8" />
           <p className="hidden lg:flex text-base text-white font-bold">
