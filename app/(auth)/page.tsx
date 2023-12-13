@@ -1,9 +1,25 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import { logo } from "@/public/images";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const { push } = useRouter();
+  const nameRef = useRef<HTMLInputElement | any>("");
+  const passwordRef = useRef<HTMLInputElement | any>("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(nameRef.current);
+    console.log(passwordRef.current);
+
+    if (nameRef.current.trim() && passwordRef.current.trim())
+      push("/categories");
+  };
+
   return (
     <div className="bg-white w-screen h-screen flex flex-col justify-between">
       <header className="w-full bg-teal-500 p-8  lg:hidden">
@@ -60,7 +76,10 @@ const Login = () => {
             priority
             className="p-10"
           />
-          <form className="w-full flex flex-col items-center">
+          <form
+            className="w-full flex flex-col items-center"
+            onSubmit={handleSubmit}
+          >
             <div className="w-3/4 p-2 rounded-sm flex flex-col">
               <label
                 htmlFor="username"
@@ -69,9 +88,12 @@ const Login = () => {
                 Nom d&apos;utilisateur
               </label>
               <input
+                ref={nameRef}
+                onChange={(e) => (nameRef.current = e.target.value)}
                 className="bg-slate-50 h-14 w-full outline-none p-2 text-base text-black font-medium"
                 type="text"
                 id="username"
+                required
               />
             </div>
             <div className="w-3/4 p-2 rounded-sm flex flex-col">
@@ -82,9 +104,12 @@ const Login = () => {
                 Mot de passe
               </label>
               <input
+                ref={passwordRef}
+                onChange={(e) => (passwordRef.current = e.target.value)}
                 className="bg-slate-50 h-14 w-full outline-none p-2 text-base text-black font-medium"
                 type="password"
                 id="password"
+                required
               />
             </div>
             <div className="w-3/4 p-2 flex items-center justify-between">

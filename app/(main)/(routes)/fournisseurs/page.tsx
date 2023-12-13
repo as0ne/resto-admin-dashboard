@@ -198,17 +198,17 @@ const Supplier = () => {
               <p>{item.name}</p>
             </div>
             <div className="w-full flex items-center justify-between">
-              <div className="flex items-center gap-1">
+              <div className="w-full flex items-center">
                 <AddressIcon />
-                <p className="text-sm text-black">{item.address}</p>
+                <p className="text-[9px] text-black">{item.address}</p>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="w-full flex items-center">
                 <PhoneIcon />
-                <p className="text-sm text-black">{item.phone}</p>
+                <p className="text-[9px] text-black">{item.phone}</p>
               </div>
-              <div className="hidden sm:flex items-center gap-1">
+              <div className="w-full flex items-center">
                 <MailIcon />
-                <p className="text-sm text-black">{item.mail}</p>
+                <p className="text-[9px] text-black">{item.mail}</p>
               </div>
             </div>
           </div>
@@ -229,18 +229,18 @@ const Supplier = () => {
               />
               <p>{item.name}</p>
             </div>
-            <div className="w-full flex items-center justify-around">
-              <div className="flex items-center gap-1">
+            <div className="w-full flex items-center justify-between">
+              <div className="w-full flex items-center">
                 <AddressIcon />
-                <p className="text-sm text-black">{item.address}</p>
+                <p className="text-[9px] text-black">{item.address}</p>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="w-full flex items-center">
                 <PhoneIcon />
-                <p className="text-sm text-black">{item.phone}</p>
+                <p className="text-[9px] text-black">{item.phone}</p>
               </div>
-              <div className="hidden sm:flex items-center gap-1">
+              <div className="w-full flex items-center">
                 <MailIcon />
-                <p className="text-sm text-black">{item.mail}</p>
+                <p className="text-[9px] text-black">{item.mail}</p>
               </div>
             </div>
           </div>

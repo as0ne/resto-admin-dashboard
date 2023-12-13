@@ -28,8 +28,8 @@ const CategoriesPage = () => {
   ];
 
   return (
-    <div className="w-full h-[calc(100vh-128px)] bg-sky-100 px-8">
-      <div className="w-full flex justify-start flex-row-reverse lg:flex-row lg:w-[400px] gap-14 lg:ml-auto">
+    <div className="w-full px-1 lg:px-0">
+      <div className="w-full flex justify-start flex-row-reverse lg:flex-row lg:w-[400px] gap-14 lg:ml-auto px-7 lg:px-8">
         <Button
           Icon={EditIcon}
           label="Modifier"
@@ -44,18 +44,10 @@ const CategoriesPage = () => {
           path="/categories/ajouter"
         />
       </div>
-      <div
-        className="w-full lg:h-[calc(100vh-255px)]
-       h-[calc(100vh-215px)] 
-       gap-10 bg-white rounded-md
-        lg:gap-14 overflow-y-auto
-         mt-8 grid grid-cols-2
-          lg:grid-cols-4 pb-4
-           lg:bg-sky-100"
-      >
+      <div className="w-full max-h-[500px] pb-24 lg:pb-[120px] overflow-y-auto gap-10 p-4 bg-white lg:bg-sky-100 rounded-md lg:gap-14 mt-8 grid grid-cols-2 lg:grid-cols-4 lg:px-8">
         {items.map((item) => (
           <div
-            className="bg-slate-100 rounded-lg h-48 flex flex-col justify-center items-center shadow-md shadow-gray-200"
+            className="bg-slate-100 rounded-lg flex flex-col justify-center items-center shadow-md shadow-gray-200"
             key={item.name}
           >
             <Image src={item.img} alt={`${item.name} image`} />
@@ -65,7 +57,7 @@ const CategoriesPage = () => {
 
         {items.map((item) => (
           <div
-            className="bg-slate-100 rounded-lg h-48 flex flex-col justify-center items-center shadow-md shadow-gray-200"
+            className="bg-slate-100 rounded-lg flex flex-col justify-center items-center shadow-md shadow-gray-200"
             key={item.name}
           >
             <Image src={item.img} alt={`${item.name} image`} />
