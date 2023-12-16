@@ -197,7 +197,7 @@ const Supplier = () => {
               />
               <p>{item.name}</p>
             </div>
-            <div className="w-full flex items-center justify-between">
+            <div className="w-full flex items-center md:justify-between">
               <div className="w-full flex items-center">
                 <AddressIcon />
                 <p className="text-[9px] text-black">{item.address}</p>
