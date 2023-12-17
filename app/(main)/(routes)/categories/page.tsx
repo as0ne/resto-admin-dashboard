@@ -47,7 +47,7 @@ const CategoriesPage = () => {
       <div className="w-full lg:max-h-[calc(100vh-220px)] max-h-[calc(100vh-280px)] pb-32 lg:pb-10 overflow-y-auto bg-white lg:bg-inherit grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 p-8 mt-8">
         {items.map((item) => (
           <div
-            className="bg-slate-100 rounded-lg py-8 flex flex-col justify-center items-center shadow-md shadow-gray-200"
+            className="bg-slate-100 rounded-lg py-8 px-2 flex flex-col justify-center items-center shadow-md shadow-gray-200"
             key={item.name}
           >
             <Image src={item.img} alt={`${item.name} image`} />
