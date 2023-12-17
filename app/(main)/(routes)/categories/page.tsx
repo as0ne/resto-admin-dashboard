@@ -44,7 +44,7 @@ const CategoriesPage = () => {
           path="/categories/ajouter"
         />
       </div>
-      <div className="w-full max-h-[500px] pb-24 lg:pb-[120px] overflow-y-auto gap-10 p-4 bg-white lg:bg-sky-100 rounded-md lg:gap-14 mt-8 grid grid-cols-2 lg:grid-cols-4 lg:px-8">
+      <div className="w-full lg:max-h-[calc(100vh-220px)] max-h-[calc(100vh-280px)] pb-32 lg:pb-10 overflow-y-auto bg-white lg:bg-inherit grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 p-8 mt-8">
         {items.map((item) => (
           <div
             className="bg-slate-100 rounded-lg py-8 flex flex-col justify-center items-center shadow-md shadow-gray-200"
