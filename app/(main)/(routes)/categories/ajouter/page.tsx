@@ -2,9 +2,29 @@
 
 import { BackIcon, ImageIcon } from "@/public/icons";
 import { useRouter } from "next/navigation";
+import { FormEvent, useRef } from "react";
 
 const AddCategory = () => {
+  const referenceRef = useRef<HTMLInputElement | any>("");
+  const designationRef = useRef<HTMLInputElement | any>("");
+  const parentRef = useRef<HTMLInputElement | any>("");
+
   const router = useRouter();
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    const reference = referenceRef.current.trim();
+    const designation = designationRef.current.trim();
+    const parent = parentRef.current.trim();
+
+    let data = {};
+
+    if (reference && designation && parent) {
+      data = { reference, designation, parent };
+      console.log(data);
+      router.push("/categories");
+    } else console.log("Errors!");
+  };
   return (
     <div className="w-full px-8">
       <button
@@ -14,13 +34,20 @@ const AddCategory = () => {
         <BackIcon />
         <p className="text-base font-semibold text-black">Nouvelle Catégorie</p>
       </button>
-      <form className="w-full flex flex-col justify-between items-stretch lg:items-center max-h-[calc(100vh-380px)] lg:max-h-full pb-5 overflow-y-auto">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full flex flex-col justify-between items-stretch lg:items-center max-h-[calc(100vh-380px)] lg:max-h-full pb-5 overflow-y-auto"
+      >
         <div className="w-full flex flex-col lg:flex-row items-center mb-16">
           <div className="w-full lg:w-3/5">
             <div className="w-full flex flex-col items-start mb-4">
               <label htmlFor="ref">Référence</label>
               <input
                 required
+                ref={referenceRef}
+                onChange={(event) =>
+                  (referenceRef.current = event.target.value)
+                }
                 type="text"
                 id="ref"
                 className="w-full lg:w-4/5 p-3 outline-none"
@@ -31,6 +58,8 @@ const AddCategory = () => {
               <label htmlFor="designation">Designation</label>
               <input
                 required
+                ref={designationRef}
+                onChange={(e) => (designationRef.current = e.target.value)}
                 type="text"
                 id="designation"
                 className="w-full lg:w-4/5 p-3 outline-none"
@@ -41,6 +70,8 @@ const AddCategory = () => {
               <label htmlFor="parent">Catégorie parentale</label>
               <input
                 required
+                ref={parentRef}
+                onChange={(e) => (parentRef.current = e.target.value)}
                 type="text"
                 id="parent"
                 className="w-full lg:w-4/5 p-3 outline-none"

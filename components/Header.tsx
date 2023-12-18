@@ -27,7 +27,7 @@ const Header = () => {
 
         <div className="lg:w-[420px] lg:px-4 lg:py-1 flex items-center gap-2 lg:bg-white lg:rounded-2xl">
           <SearchIcon
-            className="w-12 h-12 lg:w-8 lg:h-8 bg-white rounded-md lg:rounded-none"
+            className="w-12 h-12 lg:w-8 lg:h-8 bg-white rounded-xl lg:rounded-none"
             fill="#64748b"
           />
           <input
