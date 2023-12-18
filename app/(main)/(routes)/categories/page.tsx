@@ -29,7 +29,7 @@ const CategoriesPage = () => {
 
   return (
     <div className="w-full px-1 lg:px-0">
-      <div className="w-full flex justify-start flex-row-reverse lg:flex-row lg:w-[400px] gap-14 lg:ml-auto px-7 lg:px-8">
+      <div className="w-full flex justify-start flex-row-reverse lg:flex-row lg:w-[400px] gap-4 lg:ml-auto px-7 lg:px-8">
         <Button
           Icon={EditIcon}
           label="Modifier"
@@ -40,11 +40,11 @@ const CategoriesPage = () => {
         <Button
           Icon={AddIcon}
           label="Ajouter"
-          color="bg-teal-700"
+          color="bg-teal-600"
           path="/categories/ajouter"
         />
       </div>
-      <div className="w-full lg:max-h-[calc(100vh-220px)] max-h-[calc(100vh-280px)] pb-32 lg:pb-10 overflow-y-auto bg-white lg:bg-inherit grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 p-8 mt-8">
+      <div className="w-full lg:max-h-[calc(100vh-220px)] max-h-[calc(100vh-280px)] pb-32 lg:pb-10 overflow-y-auto bg-white lg:bg-inherit grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-14 p-3 rounded-lg mt-8">
         {items.map((item) => (
           <div
             className="bg-slate-100 rounded-lg py-8 px-2 flex flex-col justify-center items-center shadow-md shadow-gray-200"

@@ -11,9 +11,11 @@ import {
   LogOutIcon,
 } from "@/public/icons";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const SideBarNav = () => {
   const path = usePathname();
+  const router = useRouter();
   const links = [
     {
       href: "/categories",
@@ -40,12 +42,9 @@ const SideBarNav = () => {
       label: "Paramètres du compte",
       icon: <AccountSettingsIcon />,
     },
-    {
-      href: "/logout",
-      label: "Déconnexion",
-      icon: <LogOutIcon />,
-    },
   ];
+
+  const logOut = () => {};
 
   return (
     <aside className="hidden lg:w-[350px] lg:h-full lg:flex flex-col items-center lg:py-4">
@@ -72,6 +71,13 @@ const SideBarNav = () => {
           </Link>
         ))}
       </nav>
+      <button
+        onClick={() => router.push("/")}
+        className="flex items-center justify-start border-t border-slate-300 w-full gap-4 p-4 bg-white"
+      >
+        <LogOutIcon />
+        <p>Déconnexion</p>
+      </button>
     </aside>
   );
 };

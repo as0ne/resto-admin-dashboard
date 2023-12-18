@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 interface Props {
   path: string;
   label: string;
-  color: "bg-teal-700" | "bg-orange-400";
+  color: string;
   Icon: any;
 }
 
