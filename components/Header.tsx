@@ -1,33 +1,109 @@
 "use client";
 
-import { MenuIcon, SearchIcon } from "@/public/icons";
+import {
+  AccountSettingsIcon,
+  CategoryIcon,
+  LogOutIcon,
+  MenuIcon,
+  MessageIcon,
+  SearchIcon,
+  SupplierIcon,
+} from "@/public/icons";
 import Image from "next/image";
 import Avatar from "./Avatar";
 import { logo } from "@/public/images";
+import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const [display, setDisplay] = useState("invisible");
+  const router = useRouter();
+  const links = [
+    {
+      href: "/categories",
+      label: "Catégories",
+      icon: <CategoryIcon />,
+    },
+    {
+      href: "/fournisseurs",
+      label: "Fournisseurs",
+      icon: <SupplierIcon />,
+    },
+    {
+      href: "/acheteurs",
+      label: "Acheteurs",
+      icon: <SupplierIcon />,
+    },
+    {
+      href: "/messages",
+      label: "Messages",
+      icon: <MessageIcon />,
+    },
+    {
+      href: "/settings",
+      label: "Paramètres",
+      icon: <AccountSettingsIcon />,
+    },
+  ];
+
+  const toggleMenu = () => {
+    if (showMenu) {
+      setDisplay("visible");
+      setShowMenu(!showMenu);
+    } else {
+      setDisplay("invisible");
+      setShowMenu(!showMenu);
+    }
+  };
+
   return (
     <div className="w-full mb-8 lg:mb-5">
       <div className="w-full flex items-center justify-center bg-white mb-8 py-8 lg:hidden">
         <Image width={300} height={300} src={logo} alt="Logo" />
       </div>
       <div className="w-full flex items-center justify-between bg-sky-100 px-8 lg:mt-5">
-        <div className="flex items-center gap-8 flex-1">
-          <button
-            className="flex items-center lg:hidden"
-            onClick={() => alert("Menu appear")}
-          >
+        <div className="flex items-center gap-8 flex-1 relative">
+          <button className="flex items-center lg:hidden" onClick={toggleMenu}>
             <MenuIcon
               fill="#14b8a6"
               className="bg-white rounded-xl w-12 h-12"
             />
           </button>
+
           <Avatar />
         </div>
-
+        <div
+          className={`${display} lg:hidden flex flex-col items-stretch z-10 absolute top-72 -left-2`}
+        >
+          <nav className="flex flex-col items-stretch justify-center space-y-[1px]">
+            {links.map((link) => (
+              <Link
+                className="bg-white p-4 rounded-xl flex items-center gap-4"
+                key={link.href}
+                href={link.href}
+              >
+                {link.icon}
+                <p>{link.label}</p>
+              </Link>
+            ))}
+          </nav>
+          <button
+            onClick={() => router.push("/")}
+            className="bg-white p-4 rounded-xl flex items-center gap-4 mt-[1px]"
+          >
+            <LogOutIcon />
+            <p>Déconnexion</p>
+          </button>
+        </div>
         <div className="lg:w-[420px] lg:px-4 lg:py-1 flex items-center gap-2 lg:bg-white lg:rounded-2xl">
           <SearchIcon
-            className="w-12 h-12 lg:w-8 lg:h-8 bg-white rounded-xl lg:rounded-none"
+            className="w-12 h-12 lg:w-8 lg:h-8 bg-white rounded-xl lg:rounded-none lg:hidden"
+            fill="#14b8a6"
+          />
+          <SearchIcon
+            className="hidden lg:flex w-12 h-12 lg:w-8 lg:h-8 bg-white rounded-xl lg:rounded-none"
             fill="#64748b"
           />
           <input
