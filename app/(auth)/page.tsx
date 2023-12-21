@@ -22,7 +22,7 @@ const Login = () => {
 
   return (
     <div className="bg-white w-screen h-screen flex flex-col justify-between">
-      <header className="w-full bg-teal-500 p-8  lg:hidden">
+      <header className="w-full bg-teal-500 p-8 lg:hidden">
         <h2 className="text-lg text-white font-bold text-center mb-4">
           Bienvenue à l&apos;application
         </h2>
@@ -69,18 +69,18 @@ const Login = () => {
         </div>
         <div className="w-full flex flex-col items-center mb-8">
           <Image
-            width={350}
-            height={350}
+            width={340}
+            height={340}
             src={logo}
             alt="The logo."
             priority
             className="p-10"
           />
           <form
-            className="w-full flex flex-col items-center"
+            className="w-full flex flex-col items-center px-4 lg:px-0"
             onSubmit={handleSubmit}
           >
-            <div className="w-3/4 p-2 rounded-sm flex flex-col">
+            <div className="w-full lg:w-3/4 mb-12">
               <label
                 htmlFor="username"
                 className="text-base text-black font-medium"
@@ -90,13 +90,13 @@ const Login = () => {
               <input
                 ref={nameRef}
                 onChange={(e) => (nameRef.current = e.target.value)}
-                className="bg-slate-50 h-14 w-full outline-none p-2 text-base text-black font-medium"
+                className="bg-slate-100 w-full py-4 lg:p-4 outline-none text-base text-black font-medium"
                 type="text"
                 id="username"
                 required
               />
             </div>
-            <div className="w-3/4 p-2 rounded-sm flex flex-col">
+            <div className="w-full lg:w-3/4 mb-12">
               <label
                 htmlFor="password"
                 className="text-base text-black font-medium"
@@ -106,52 +106,49 @@ const Login = () => {
               <input
                 ref={passwordRef}
                 onChange={(e) => (passwordRef.current = e.target.value)}
-                className="bg-slate-50 h-14 w-full outline-none p-2 text-base text-black font-medium"
+                className="bg-slate-100 w-full py-4 lg:p-4 outline-none text-base text-black font-medium"
                 type="password"
                 id="password"
                 required
               />
             </div>
-            <div className="w-3/4 p-2 flex items-center justify-between">
-              <div className="p-2 rounded-sm">
-                <input type="checkbox" name="remember" />
-                <label
-                  htmlFor="remember"
-                  className="w-full outline-none p-2 text-base text-black font-medium"
-                >
+            <div className="w-full lg:w-3/4 mb-8 text-base flex items-center justify-between">
+              <div className="w-full flex items-center gap-1">
+                <input type="checkbox" name="remember" id="remember" />
+                <label htmlFor="remember" className="">
                   Se souvenir de moi
                 </label>
               </div>
-              <Link href="#" className="text-base text-slate-300">
-                Mot de passe oublié?
+              <Link href="#" className="w-full text-slate-400">
+                Mot de passe oublié ?
               </Link>
             </div>
             <button
               type="submit"
-              className="bg-orange-500 w-64 p-4 text-center text-base text-white font-medium mt-4"
+              className="bg-orange-500 px-24 py-3 text-center text-lg text-white font-bold mt-4"
             >
-              Se connecter
+              se connecter
             </button>
           </form>
         </div>
       </main>
-      <footer className="max-w-full bg-teal-500 flex flex-col items-center gap-8 lg:hidden p-8">
+      <footer className="max-w-full bg-teal-500 flex flex-col items-center gap-8 lg:hidden p-8 mt-6">
         <div className="w-full flex items-center justify-center">
           <Link
             href="#"
-            className="w-full text-base text-white text-center underline"
+            className="w-full text-[12px] lg:text-base text-white text-center underline"
           >
             Politique de confidentialité
           </Link>
 
           <Link
             href="#"
-            className="w-full text-base text-white underline text-center"
+            className="w-full text-[12px] lg:text-base text-white underline text-center"
           >
             Conditions d&apos;utilisateurs
           </Link>
         </div>
-        <p className="text-base text-white text-center">
+        <p className="text-[12px] lg:text-base text-white text-center">
           2023 Crée par CODINGART. Tous droits réservés
         </p>
       </footer>
