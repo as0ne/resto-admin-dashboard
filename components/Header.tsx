@@ -49,7 +49,10 @@ const Header = () => {
   ];
 
   const toggleMenu = () => {
-    if (showMenu) {
+    {
+      /** Need to fix a bug here */
+    }
+    if (!showMenu) {
       setDisplay("visible");
       setShowMenu(!showMenu);
     } else {
@@ -64,22 +67,22 @@ const Header = () => {
         <Image width={300} height={300} src={logo} alt="Logo" />
       </div>
       <div className="w-full flex items-center justify-between bg-sky-100 px-8 lg:mt-5">
-        <div className="flex items-center gap-8 flex-1 relative">
+        <div className="flex items-center gap-4 flex-1 relative">
           <button className="flex items-center lg:hidden" onClick={toggleMenu}>
             <MenuIcon
               fill="#14b8a6"
-              className="bg-white rounded-xl w-12 h-12"
+              className="bg-white rounded-xl w-12 h-12 p-1"
             />
           </button>
-
           <Avatar />
         </div>
         <div
-          className={`${display} lg:hidden flex flex-col items-stretch z-10 absolute top-72 -left-2`}
+          className={`${display} lg:hidden flex flex-col z-10 absolute top-72 -left-2`}
         >
-          <nav className="flex flex-col items-stretch justify-center space-y-[1px]">
+          <nav className="flex flex-col justify-center space-y-[1px]">
             {links.map((link) => (
               <Link
+                onClick={toggleMenu}
                 className="bg-white p-4 rounded-xl flex items-center gap-4"
                 key={link.href}
                 href={link.href}
@@ -99,7 +102,7 @@ const Header = () => {
         </div>
         <div className="lg:w-[420px] lg:px-4 lg:py-1 flex items-center gap-2 lg:bg-white lg:rounded-2xl">
           <SearchIcon
-            className="w-12 h-12 lg:w-8 lg:h-8 bg-white rounded-xl lg:rounded-none lg:hidden"
+            className="w-12 h-12 p-1 bg-white rounded-xl lg:hidden"
             fill="#14b8a6"
           />
           <SearchIcon
