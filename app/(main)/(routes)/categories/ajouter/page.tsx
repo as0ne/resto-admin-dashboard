@@ -17,10 +17,8 @@ const AddCategory = () => {
     const designation = designationRef.current.trim();
     const parent = parentRef.current.trim();
 
-    let data = {};
-
     if (reference && designation && parent) {
-      data = { reference, designation, parent };
+      let data = { reference, designation, parent };
       console.log(data);
       router.push("/categories");
     } else console.log("Errors!");
@@ -36,10 +34,10 @@ const AddCategory = () => {
       </button>
       <form
         onSubmit={handleSubmit}
-        className="w-full flex flex-col justify-between items-stretch lg:items-center max-h-[calc(100vh-380px)] lg:max-h-full pb-5 overflow-y-auto"
+        className="w-full flex flex-col justify-between items-center lg:items-center max-h-[calc(100vh-360px)] lg:max-h-full pb-5 overflow-y-auto"
       >
-        <div className="w-full flex flex-col lg:flex-row items-center mb-16">
-          <div className="w-full lg:w-3/5">
+        <div className="w-full flex flex-col lg:flex-row items-center lg:items-stretch mb-16 lg:mb-0">
+          <div className="w-full lg:w-3/5 mb-16">
             <div className="w-full flex flex-col items-start mb-4">
               <label htmlFor="ref">Référence</label>
               <input
@@ -78,7 +76,7 @@ const AddCategory = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col bg-white p-2 justify-center items-center mt-16 lg:mt-0">
+          <div className="w-60 text-black text-center text-base flex flex-col bg-white py-2 justify-center items-center lg:mt-0 lg:mb-16">
             <ImageIcon />
             <input
               type="file"
@@ -86,23 +84,21 @@ const AddCategory = () => {
               id="image"
               className="w-[0.1px] h-[0.1px] -z-[1px] opacity-0 absolute overflow-hidden"
             />
-            <label
-              htmlFor="image"
-              className="text-base text-center text-black font-semibold inline-block cursor-pointer"
-            >
+            <label htmlFor="image" className="font-semibold cursor-pointer">
               Télécharger une image
             </label>
-            <p className="text-sm text-center text-black font-normal">
-              Taille maximale 10M
-            </p>
-            <p className="text-xs text-center text-slate-200 font-normal">
+            <p className="text-sm font-normal">Taille maximale 10M</p>
+            <p className="text-xs text-slate-200 font-normal">
               Format JPEG, PNG
             </p>
           </div>
         </div>
         <button
+          onClick={() => {
+            router.back();
+          }}
           type="submit"
-          className="bg-teal-500 text-white text-lg font-bold p-3 lg:w-64 rounded-3xl"
+          className="w-60 py-3 bg-teal-500 text-white text-lg font-bold lg:w-64 rounded-3xl"
         >
           Ajouter
         </button>
