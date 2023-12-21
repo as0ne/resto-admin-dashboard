@@ -90,7 +90,6 @@ const Supplier = () => {
         <Indicator count={5} description="Fournisseurs en attente" />
       </div>
 
-      {/**List of suppliers */}
       {/** Desktop */}
       <div className="hidden lg:block w-full h-[calc(100vh-295px)] overflow-y-auto pb-10 px-8">
         <table className="w-full divide-y-[35px] divide-sky-100 table-auto">
@@ -187,7 +186,7 @@ const Supplier = () => {
             key={item.id}
             className="w-full bg-white flex flex-col items-start gap-2 rounded-xl p-2 mb-4"
           >
-            <div className="flex items-center gap-2 bg-white">
+            <div className="flex items-center gap-2">
               <Image
                 src={item.logo}
                 alt="restorant"
@@ -197,18 +196,18 @@ const Supplier = () => {
               />
               <p>{item.name}</p>
             </div>
-            <div className="w-full flex items-center md:justify-between">
-              <div className="w-full flex items-center">
+            <div className="w-full flex items-center gap-2 text-[9px] text-black">
+              <div className="w-full flex items-center gap-1">
                 <AddressIcon />
-                <p className="text-[9px] text-black">{item.address}</p>
+                <p>{item.address}</p>
               </div>
-              <div className="w-full flex items-center">
+              <div className="w-full flex items-center gap-1">
                 <PhoneIcon />
-                <p className="text-[9px] text-black">{item.phone}</p>
+                <p>{item.phone}</p>
               </div>
-              <div className="w-full flex items-center">
+              <div className="w-full flex items-center gap-1">
                 <MailIcon />
-                <p className="text-[9px] text-black">{item.mail}</p>
+                <p>{item.mail}</p>
               </div>
             </div>
           </div>
@@ -229,18 +228,18 @@ const Supplier = () => {
               />
               <p>{item.name}</p>
             </div>
-            <div className="w-full flex items-center justify-between">
+            <div className="w-full flex items-center justify-between text-[10px] text-black">
               <div className="w-full flex items-center">
                 <AddressIcon />
-                <p className="text-[9px] text-black">{item.address}</p>
+                <p>{item.address}</p>
               </div>
               <div className="w-full flex items-center">
                 <PhoneIcon />
-                <p className="text-[9px] text-black">{item.phone}</p>
+                <p>{item.phone}</p>
               </div>
               <div className="w-full flex items-center">
                 <MailIcon />
-                <p className="text-[9px] text-black">{item.mail}</p>
+                <p>{item.mail}</p>
               </div>
             </div>
           </div>
