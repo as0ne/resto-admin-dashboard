@@ -22,7 +22,7 @@ const Login = () => {
 
   return (
     <div className="bg-white w-screen h-screen flex flex-col justify-between">
-      <header className="w-full bg-teal-500 p-8 lg:hidden">
+      <header className="w-full bg-teal-500 px-8 lg:hidden">
         <h2 className="text-lg text-white font-bold text-center mb-4">
           Bienvenue à l&apos;application
         </h2>
@@ -74,10 +74,10 @@ const Login = () => {
             src={logo}
             alt="The logo."
             priority
-            className="p-10"
+            className="p-4 lg:p-10 mb-8"
           />
           <form
-            className="w-full flex flex-col items-center px-4 lg:px-0"
+            className="w-full lg:max-w-4xl flex flex-col items-center px-4 lg:px-0"
             onSubmit={handleSubmit}
           >
             <div className="w-full lg:w-3/4 mb-12">
@@ -90,7 +90,7 @@ const Login = () => {
               <input
                 ref={nameRef}
                 onChange={(e) => (nameRef.current = e.target.value)}
-                className="bg-slate-100 w-full py-4 lg:p-4 outline-none text-base text-black font-medium"
+                className="bg-slate-100 w-full p-4 outline-none text-base text-black font-medium"
                 type="text"
                 id="username"
                 required
@@ -106,7 +106,7 @@ const Login = () => {
               <input
                 ref={passwordRef}
                 onChange={(e) => (passwordRef.current = e.target.value)}
-                className="bg-slate-100 w-full py-4 lg:p-4 outline-none text-base text-black font-medium"
+                className="bg-slate-100 w-full p-4 outline-none text-base text-black font-medium"
                 type="password"
                 id="password"
                 required

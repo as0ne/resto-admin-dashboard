@@ -63,8 +63,8 @@ const Header = () => {
 
   return (
     <div className="w-full mb-8 lg:mb-5">
-      <div className="w-full flex items-center justify-center bg-white mb-8 py-8 lg:hidden">
-        <Image width={300} height={300} src={logo} alt="Logo" />
+      <div className="w-full flex items-center justify-center bg-white py-6 mb-8 lg:hidden">
+        <Image width={180} height={180} src={logo} alt="Logo" />
       </div>
       <div className="w-full flex items-center justify-between bg-sky-100 px-8 lg:mt-5">
         <div className="flex items-center gap-4 flex-1 relative">
@@ -77,7 +77,7 @@ const Header = () => {
           <Avatar />
         </div>
         <div
-          className={`${display} lg:hidden flex flex-col z-10 absolute top-72 -left-2`}
+          className={`${display} lg:hidden flex flex-col z-10 absolute top-52 left-0 px-8`}
         >
           <nav className="flex flex-col justify-center space-y-[1px]">
             {links.map((link) => (

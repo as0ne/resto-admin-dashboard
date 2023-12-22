@@ -34,7 +34,7 @@ const AddCategory = () => {
       </button>
       <form
         onSubmit={handleSubmit}
-        className="w-full flex flex-col justify-between items-center lg:items-center max-h-[calc(100vh-360px)] lg:max-h-full pb-5 overflow-y-auto"
+        className="w-full flex flex-col justify-between items-center lg:items-center max-h-[calc(100vh-300px)] lg:max-h-full pb-4 overflow-y-auto"
       >
         <div className="w-full flex flex-col lg:flex-row items-center lg:items-stretch mb-16 lg:mb-0">
           <div className="w-full lg:w-3/5 mb-16">
@@ -94,9 +94,6 @@ const AddCategory = () => {
           </div>
         </div>
         <button
-          onClick={() => {
-            router.back();
-          }}
           type="submit"
           className="w-60 py-3 bg-teal-500 text-white text-lg font-bold lg:w-64 rounded-3xl"
         >

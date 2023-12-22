@@ -58,14 +58,14 @@ const Supplier = () => {
   ];
   return (
     <div className="w-full">
-      <div className="w-full flex items-center justify-end lg:justify-end mb-6 px-8">
-        {/*<button className="flex items-center gap-1 lg:hidden">
+      {/*<button className="flex items-center gap-1 lg:hidden">
           <BackIcon />
           <p className="text-base text-black font-normal">
             Liste des fournisseurs
           </p>
         </button>*/}
-        <button className="bg-teal-700 flex items-center rounded-md lg:p-1 gap-1">
+      <div className="w-full px-8 mb-4">
+        <button className="lg:w-[150px] flex items-center gap-2 bg-teal-900 w-fit ml-auto text-white text-base font-semibold rounded-md lg:p-1">
           <AddIcon className="w-12 h-12 lg:w-8 lg:h-8" />
           <p className="hidden lg:flex text-base text-white font-bold">
             Inviter
@@ -180,7 +180,7 @@ const Supplier = () => {
       </div>
 
       {/** Mobile & Tablets */}
-      <div className="w-full h-[calc(100vh-210px)] lg:hidden overflow-y-auto pb-16 px-1">
+      <div className="w-full max-h-[calc(100vh-300px)] lg:hidden overflow-y-auto pb-5 px-1">
         {items.map((item) => (
           <div
             key={item.id}
@@ -189,7 +189,7 @@ const Supplier = () => {
             <div className="flex items-center gap-2">
               <Image
                 src={item.logo}
-                alt="restorant"
+                alt="restaurant"
                 width={54}
                 height={54}
                 className="rounded-full border-[1px] border-orange-200"
@@ -221,7 +221,7 @@ const Supplier = () => {
             <div className="flex items-center gap-2 bg-white">
               <Image
                 src={item.logo}
-                alt="restorant"
+                alt="restaurant"
                 width={54}
                 height={54}
                 className="rounded-full border-[1px] border-orange-200"
