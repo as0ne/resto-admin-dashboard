@@ -239,3 +239,33 @@ export const MailIcon = ({ className }: IconProps) => {
     </svg>
   );
 };
+
+export const SendMessageIcon = ({ className, fill }: IconProps) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="28"
+      viewBox="0 -960 960 960"
+      width="28"
+      className={className}
+      fill="white"
+    >
+      <path d="M480-440 160-640v400h360v80H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v280h-80v-200L480-440Zm0-80 320-200H160l320 200ZM760-40l-56-56 63-64H600v-80h167l-64-64 57-56 160 160L760-40ZM160-640v440-240 3-283 80Z" />
+    </svg>
+  );
+};
+
+export const DeleteIcon = ({ className, fill }: IconProps) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="28"
+      viewBox="0 -960 960 960"
+      width="28"
+      className={className}
+      fill="white"
+    >
+      <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+    </svg>
+  );
+};

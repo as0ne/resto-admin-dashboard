@@ -7,6 +7,7 @@ import {
   PhoneIcon,
 } from "@/public/icons";
 import { achibest, blegourmet, carrefour, marjane } from "@/public/images";
+import Link from "next/link";
 import Image from "next/image";
 
 const Supplier = () => {
@@ -63,6 +64,9 @@ const Supplier = () => {
           <p className="text-base text-black font-normal">
             Liste des fournisseurs
           </p>
+      <h1 className="text-base text-black font-normal">
+        Listes des fournisseurs
+      </h1>
         </button>*/}
       <div className="w-full px-8 mb-4">
         <button className="lg:w-[150px] flex items-center gap-2 bg-teal-900 w-fit ml-auto text-white text-base font-semibold rounded-md lg:p-1">
@@ -142,7 +146,9 @@ const Supplier = () => {
                       priority
                       className="rounded-full aspect-auto border-[1px] border-orange-300"
                     />
-                    <p>{item.name}</p>
+                    <p>
+                      <Link href={`/fournisseurs/${item.id}`}>{item.name}</Link>
+                    </p>
                   </div>
                 </td>
                 <td>{item.address}</td>
@@ -167,7 +173,9 @@ const Supplier = () => {
                       priority
                       className="rounded-full aspect-auto border-[1px] border-orange-300"
                     />
-                    <p>{item.name}</p>
+                    <p>
+                      <Link href={`/fournisseurs/${item.id}`}>{item.name}</Link>
+                    </p>
                   </div>
                 </td>
                 <td>{item.address}</td>
@@ -194,7 +202,9 @@ const Supplier = () => {
                 height={54}
                 className="rounded-full border-[1px] border-orange-200"
               />
-              <p>{item.name}</p>
+              <p>
+                <Link href={`/fournisseurs/${item.id}`}>{item.name}</Link>
+              </p>
             </div>
             <div className="w-full flex items-center gap-2 text-[9px] text-black">
               <div className="w-full flex items-center gap-1">
@@ -226,7 +236,9 @@ const Supplier = () => {
                 height={54}
                 className="rounded-full border-[1px] border-orange-200"
               />
-              <p>{item.name}</p>
+              <p>
+                <Link href={`/fournisseurs/${item.id}`}>{item.name}</Link>
+              </p>
             </div>
             <div className="w-full flex items-center justify-between text-[10px] text-black">
               <div className="w-full flex items-center">

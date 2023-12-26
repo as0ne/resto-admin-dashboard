@@ -1,5 +1,3 @@
-"use client";
-
 import Button from "@/components/Button";
 import { AddIcon, EditIcon } from "@/public/icons";
 import {
