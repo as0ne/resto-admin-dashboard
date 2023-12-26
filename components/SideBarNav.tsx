@@ -38,7 +38,7 @@ const SideBarNav = () => {
       icon: <MessageIcon />,
     },
     {
-      href: "/settings",
+      href: "/account",
       label: "Paramètres du compte",
       icon: <AccountSettingsIcon />,
     },

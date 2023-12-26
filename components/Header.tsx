@@ -42,7 +42,7 @@ const Header = () => {
       icon: <MessageIcon />,
     },
     {
-      href: "/settings",
+      href: "/account",
       label: "Paramètres",
       icon: <AccountSettingsIcon />,
     },
