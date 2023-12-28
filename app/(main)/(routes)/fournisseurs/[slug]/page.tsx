@@ -1,96 +1,65 @@
 "use client";
 
-import Button from "@/components/Button";
-import { BackIcon, DeleteIcon, SendMessageIcon } from "@/public/icons";
 import { profilPic } from "@/public/images";
+import Button from "./Button";
+import { BackIcon, DeleteIcon, SendMessageIcon } from "@/public/icons";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
+import GroupButton from "./GroupButton";
+import InfoBox from "./InfoBox";
 
-const DetailPage = () => {
+const DetailPage = ({ params: { id } }: { params: { id: number } }) => {
+  const supplier = {
+    id: id,
+  };
+
+  const router = useRouter();
   return (
-    <div className="w-full bg-sky-100">
-      <div className="w-full flex items-center justify-between px-8">
-        <button className="w-full flex items-center gap-1">
+    <div className="w-full bg-sky-100 text-[12px] lg:text-base px-2 lg:px-0">
+      <div className="w-full flex items-center px-6 lg:px-8">
+        <button
+          className="w-full flex items-center gap-2 lg:hidden"
+          onClick={() => router.back()}
+        >
           <BackIcon />
-          <p className="text-[12px] lg:text-base font-semibold">
+          <p className="font-semibold whitespace-nowrap text-base">
             Liste des fournisseurs
           </p>
         </button>
-        <div className="w-full flex items-center gap-6 justify-end text-white font-semibold">
-          <button className="flex items-center gap-2 bg-teal-800 text-white text-base font-semibold rounded-md lg:p-1">
-            <SendMessageIcon className="h-11 w-11 lg:w-8 lg:h-8" />
-            <p className="hidden lg:block">Envoyer un message</p>
-          </button>
-          <button className="lg:w-[185px] flex items-center gap-2 bg-orange-700 text-white text-base font-semibold rounded-md lg:p-1">
-            <DeleteIcon className="h-11 w-11 lg:w-8 lg:h-8" />
-            <p className="hidden lg:block">Supprimer</p>
-          </button>
+        <div className="w-full ml-auto lg:max-w-[400px] flex flex-row-reverse lg:flex-row items-center gap-6">
+          <Button
+            label="Supprimer"
+            icon={<DeleteIcon />}
+            color="bg-orange-700"
+          />
+          <Button
+            label="Envoyer message"
+            color="bg-teal-800"
+            icon={<SendMessageIcon />}
+          />
         </div>
       </div>
-      <div className="w-full lg:max-w-[600px] mx-auto overflow-x-auto flex items-center gap-8 text-base mt-8 px-1">
-        <button className="bg-white w-full py-2 rounded-md focus:bg-green-200">
-          Informations Admin
-        </button>
 
-        <button className="bg-white w-full py-2 rounded-md focus:bg-green-200">
-          Informations Entreprise
-        </button>
+      <div className="w-full">
+        <div></div>
+        <GroupButton />
 
-        <button className="bg-white w-full py-2 rounded-md focus:bg-green-200">
-          Liste des utilisateurs
-        </button>
-      </div>
-
-      <div className="w-full lg:max-w-[600px] mx-auto mt-8 max-h-[calc(100vh-120px)] overflow-y-auto bg-white rounded-lg p-4 text-[12px] lg:text-base font-bold text-black px-2">
-        <Image
-          src={profilPic}
-          alt="User picture"
-          width={80}
-          height={80}
-          priority
-          className="rounded-xl absolute z-40 top-[390px] right-[150px] lg:hidden"
-        />
-        <div className="w-full mt-20 space-y-8 pb-8">
-          <div className="w-full flex items-center gap-4 border-b-[1px]">
-            <div className="w-[120px] flex items-center justify-between">
-              <p>Nom d&apos;utilisateur</p>
-              <p>:</p>
-            </div>
-            <p className="text-green-500 font-semibold">Achibest</p>
-          </div>
-
-          <div className="w-full flex items-center gap-4 border-b-[1px]">
-            <div className="w-[120px] flex items-center justify-between">
-              <p>Nom</p>
-              <p>:</p>
-            </div>
-            <p className="text-green-500 font-semibold">Mohammed</p>
-          </div>
-
-          <div className="w-full flex items-center gap-4 border-b-[1px]">
-            <div className="w-[120px] flex items-center justify-between">
-              <p>Prénom</p>
-              <p>:</p>
-            </div>
-            <p className="text-green-500 font-semibold">Abdorahman</p>
-          </div>
-
-          <div className="w-full flex items-center gap-4 border-b-[1px]">
-            <div className="w-[120px] flex items-center justify-between">
-              <p>Téléphone</p>
-              <p>:</p>
-            </div>
-            <p className="text-green-500 font-semibold">+212 6 12 34 56 78</p>
-          </div>
-
-          <div className="w-full flex items-center gap-4 border-b-[1px]">
-            <div className="w-[135px] flex items-center justify-between">
-              <p>Email</p>
-              <p>:</p>
-            </div>
-            <p className="text-green-500 font-semibold">
-              achibestadmin@gmail.com
-            </p>
+        <div className="lg:max-w-3xl mx-auto mt-8 rounded-md bg-white flex items-start gap-8 p-4 lg:max-h-[calc(100vh-300px)] overflow-y-auto">
+          <Image
+            priority
+            src={profilPic}
+            alt="User picture."
+            width={90}
+            height={90}
+            className="hidden lg:flex rounded-lg"
+          />
+          <div className="w-4/5">
+            <InfoBox label="Nom d'utilisateur" value="Achibest" />
+            <InfoBox label="Nom" value="Mohammed" />
+            <InfoBox label="Prénom" value="Abdourahman" />
+            <InfoBox label="Téléphone" value="+212 6 12 34 56 78" />
+            <InfoBox label="Email" value="achibest_admin@gmail.com" />
           </div>
         </div>
       </div>

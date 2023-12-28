@@ -10,7 +10,7 @@ const AccountSettings = () => {
     email: "mohammed.restomarkets@gmail.com",
   });
   return (
-    <div className="w-full px-8">
+    <div className="w-full px-8 overflow-hidden">
       <h1 className="mb-8 bg-white text-xl text-red-500 font-semibold px-2">
         Mes informations
       </h1>

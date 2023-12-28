@@ -49,9 +49,6 @@ const Header = () => {
   ];
 
   const toggleMenu = () => {
-    {
-      /** Need to fix a bug here */
-    }
     if (!showMenu) {
       setDisplay("visible");
       setShowMenu(!showMenu);
@@ -100,7 +97,7 @@ const Header = () => {
             <p>Déconnexion</p>
           </button>
         </div>
-        <div className="lg:w-[420px] lg:px-4 lg:py-1 flex items-center gap-2 lg:bg-white lg:rounded-2xl">
+        <div className="lg:w-[400px] lg:px-4 lg:py-1 flex items-center gap-2 lg:bg-white lg:rounded-2xl">
           <SearchIcon
             className="w-12 h-12 p-1 bg-white rounded-xl lg:hidden"
             fill="#14b8a6"

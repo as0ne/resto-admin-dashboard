@@ -58,7 +58,7 @@ const Supplier = () => {
     },
   ];
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       {/*<button className="flex items-center gap-1 lg:hidden">
           <BackIcon />
           <p className="text-base text-black font-normal">

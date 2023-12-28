@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/Button";
 import { AddIcon, EditIcon } from "@/public/icons";
 import {
@@ -26,8 +28,8 @@ const CategoriesPage = () => {
   ];
 
   return (
-    <div className="w-full px-1 lg:px-0">
-      <div className="lg:w-fit flex flex-row-reverse lg:flex-row lg:ml-auto gap-4 lg:gap-14 mb-4 lg:mb-8 px-7 lg:px-8">
+    <div className="w-full px-1 lg:px-0 overflow-hidden">
+      <div className="lg:max-w-[460px] lg:ml-auto flex flex-row-reverse lg:flex-row lg:justify-end gap-4 lg:gap-14 mb-4 lg:mb-8 px-7 lg:px-8">
         <Button
           Icon={EditIcon}
           label="Modifier"
@@ -42,7 +44,7 @@ const CategoriesPage = () => {
           path="/categories/ajouter"
         />
       </div>
-      <div className="bg-white lg:bg-sky-100 p-4 rounded-xl w-full max-h-[calc(100vh-310px)] lg:max-h-[calc(100vh-80px)] pb-4 lg:pb-40 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-14 overflow-y-auto lg:px-8">
+      <div className="bg-white lg:bg-sky-100 p-4 rounded-xl w-full max-h-[calc(100vh-310px)] lg:max-h-[calc(100vh-100px)] pb-4 lg:pb-40 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-14 overflow-y-auto lg:px-8">
         {items.map((item) => (
           <div
             className="bg-slate-100 rounded-lg py-8 px-6 flex flex-col justify-center items-center shadow-md shadow-gray-200"
