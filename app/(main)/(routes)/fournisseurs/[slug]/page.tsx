@@ -1,66 +1,68 @@
 "use client";
 
-import { profilPic } from "@/public/images";
-import Button from "./Button";
-import { BackIcon, DeleteIcon, SendMessageIcon } from "@/public/icons";
+import { achibest, profilPic } from "@/public/images";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React from "react";
-import GroupButton from "./GroupButton";
-import InfoBox from "./InfoBox";
+import PageHeader from "./components/Header";
+import Selectors from "./components/Selectors";
+import Details from "./components/Details";
+import { useState } from "react";
 
-const DetailPage = ({ params: { id } }: { params: { id: number } }) => {
-  const supplier = {
-    id: id,
-  };
+const DetailPage = () => {
+  const [showAdminInfo, setShowAdminInfo] = useState(true);
+  const [showClientInfo, setShowClientInfo] = useState(false);
+  const [showUsersList, setShowUsersList] = useState(false);
 
-  const router = useRouter();
+  const adminDetails = [
+    { label: "Nom d'utilisateur", value: "Achibest" },
+    { label: "Nom", value: "Mohammed" },
+    { label: "Prénom", value: "abdorahman" },
+    { label: "Téléphone", value: "+212 6 12 34 56 78" },
+    { label: "Email", value: "achibest_admin@gmail.com" },
+  ];
+
+  const clientDetails = [
+    { label: "Nom de l'entreprise", value: "Achibest" },
+    { label: "ICE", value: "1234567891012" },
+    {
+      label: "Secteur D'activité",
+      value: "Vent des produits alimentaires",
+    },
+    { label: "Adresse", value: "+212 6 12 34 56 78" },
+  ];
   return (
-    <div className="w-full bg-sky-100 text-[12px] lg:text-base px-2 lg:px-0">
-      <div className="w-full flex items-center px-6 lg:px-8">
-        <button
-          className="w-full flex items-center gap-2 lg:hidden"
-          onClick={() => router.back()}
-        >
-          <BackIcon />
-          <p className="font-semibold whitespace-nowrap text-base">
-            Liste des fournisseurs
-          </p>
-        </button>
-        <div className="w-full ml-auto lg:max-w-[400px] flex flex-row-reverse lg:flex-row items-center gap-6">
-          <Button
-            label="Supprimer"
-            icon={<DeleteIcon />}
-            color="bg-orange-700"
-          />
-          <Button
-            label="Envoyer message"
-            color="bg-teal-800"
-            icon={<SendMessageIcon />}
-          />
-        </div>
-      </div>
-
-      <div className="w-full">
-        <div></div>
-        <GroupButton />
-
-        <div className="lg:max-w-3xl mx-auto mt-8 rounded-md bg-white flex items-start gap-8 p-4 lg:max-h-[calc(100vh-300px)] overflow-y-auto">
+    <div className="w-full bg-sky-100 px-1 text-[13px] sm:max-lg:text-base lg:px-8 overflow-hidden">
+      <PageHeader />
+      <div>
+        <div className="hidden max-w-2xl mx-auto lg:flex items-center gap-4 text-base font-bold mb-6">
           <Image
-            priority
-            src={profilPic}
-            alt="User picture."
-            width={90}
-            height={90}
-            className="hidden lg:flex rounded-lg"
+            src={achibest}
+            alt="Client"
+            height={100}
+            width={100}
+            className="rounded-full ring-1 ring-yellow-200"
           />
-          <div className="w-4/5">
-            <InfoBox label="Nom d'utilisateur" value="Achibest" />
-            <InfoBox label="Nom" value="Mohammed" />
-            <InfoBox label="Prénom" value="Abdourahman" />
-            <InfoBox label="Téléphone" value="+212 6 12 34 56 78" />
-            <InfoBox label="Email" value="achibest_admin@gmail.com" />
-          </div>
+          <p>Achibest</p>
+        </div>
+        <Selectors />
+
+        <div className="w-full lg:max-w-2xl mx-auto shadow-md lg:shadow-none relative lg:static lg:rounded-md bg-white flex flex-col lg:flex-row items-center lg:items-start lg:gap-14 lg:justify-around mt-16 lg:mt-0 px-4 py-4">
+          <Image
+            src={profilPic}
+            alt="Profile picture."
+            height={95}
+            width={95}
+            className="rounded-3xl absolute z-20 -top-10 lg:hidden"
+          />
+          <Image
+            src={profilPic}
+            alt="Picture"
+            height={80}
+            width={80}
+            className="rounded-md hidden lg:block"
+          />
+          {/*<Details details={adminDetails} />*/}
+          {showAdminInfo && <Details details={adminDetails} />}
+          {showClientInfo && <Details details={clientDetails} />}
         </div>
       </div>
     </div>

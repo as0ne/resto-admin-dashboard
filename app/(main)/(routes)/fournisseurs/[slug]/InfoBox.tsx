@@ -7,12 +7,12 @@ interface Props {
 
 const InfoBox = ({ label, value }: Props) => {
   return (
-    <div className="w-full flex items-center gap-10 mb-8 border-b text-base font-semibold pb-4">
-      <div className="w-[140px] flex items-center justify-between">
+    <div className="text-[13.5px] lg:text-base font-semibold border-b my-2 flex items-center gap-4 px-1 py-4">
+      <div className="w-[120px] flex items-center justify-between">
         <p>{label}</p>
         <p>:</p>
       </div>
-      <p className="text-green-400">{value}</p>
+      <p className="text-green-400 w-fit overflow-x-auto">{value}</p>
     </div>
   );
 };

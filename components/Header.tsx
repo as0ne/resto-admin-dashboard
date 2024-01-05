@@ -74,7 +74,7 @@ const Header = () => {
           <Avatar />
         </div>
         <div
-          className={`${display} lg:hidden flex flex-col z-10 absolute top-52 left-0 px-8`}
+          className={`${display} lg:hidden flex flex-col z-50 absolute top-52 left-0 px-8`}
         >
           <nav className="flex flex-col justify-center space-y-[1px]">
             {links.map((link) => (
