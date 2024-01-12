@@ -62,8 +62,8 @@ const SideBarNav = () => {
           <Link
             key={link.href}
             href={link.href}
-            className={`flex items-center bg-${
-              path === link.href ? "sky-100" : "white"
+            className={`flex hover:bg-sky-100 items-center bg-${
+              path.startsWith(link.href) ? "sky-100" : "white"
             } gap-4 p-4`}
           >
             {link.icon}

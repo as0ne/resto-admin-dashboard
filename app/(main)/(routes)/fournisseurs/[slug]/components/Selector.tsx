@@ -9,7 +9,7 @@ interface Props {
 const Selector = ({ color, label, onClick }: Props) => {
   return (
     <button
-      className={`${color} w-full rounded-md p-2 whitespace-nowrap`}
+      className={`${color} rounded-md p-2 whitespace-nowrap shrink-0`}
       onClick={onClick}
     >
       {label}

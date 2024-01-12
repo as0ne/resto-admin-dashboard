@@ -9,6 +9,7 @@ import {
 import { achibest, blegourmet, carrefour, marjane } from "@/public/images";
 import Link from "next/link";
 import Image from "next/image";
+import SupplierList from "./SupplierList";
 
 const Supplier = () => {
   const items = [
@@ -59,18 +60,9 @@ const Supplier = () => {
   ];
   return (
     <div className="w-full overflow-hidden">
-      {/*<button className="flex items-center gap-1 lg:hidden">
-          <BackIcon />
-          <p className="text-base text-black font-normal">
-            Liste des fournisseurs
-          </p>
-      <h1 className="text-base text-black font-normal">
-        Listes des fournisseurs
-      </h1>
-        </button>*/}
       <div className="w-full px-8 mb-4">
-        <button className="lg:w-[150px] flex items-center gap-2 bg-teal-900 w-fit ml-auto text-white text-base font-semibold rounded-md lg:p-1">
-          <AddIcon className="w-12 h-12 lg:w-8 lg:h-8" />
+        <button className="lg:w-[150px] p-2 px-[10px] lg:p-[4px] flex items-center gap-2 bg-teal-700 w-fit ml-auto text-white text-base font-semibold rounded-md">
+          <AddIcon />
           <p className="hidden lg:flex text-base text-white font-bold">
             Inviter
           </p>
@@ -91,100 +83,16 @@ const Supplier = () => {
           timestamp="Ce mois"
         />
 
-        <Indicator count={5} description="Fournisseurs en attente" />
+        <Indicator
+          count={5}
+          description="Fournisseurs en attente"
+          timestamp=""
+        />
       </div>
 
       {/** Desktop */}
       <div className="hidden lg:block w-full h-[calc(100vh-295px)] overflow-y-auto pb-10 px-8">
-        <table className="w-full divide-y-[35px] divide-sky-100 table-auto">
-          <thead className="w-full bg-white">
-            <tr className="w-full flex items-center justify-between py-2">
-              <th>
-                <p className="text-teal-500 text-base font-normal px-2">
-                  Identité de l&apos;entreprise
-                </p>
-              </th>
-
-              <th>
-                <div className="flex items-center gap-2 px-2">
-                  <AddressIcon />
-                  <p className="text-teal-500 text-base font-normal">Adresse</p>
-                </div>
-              </th>
-
-              <th>
-                <div className="flex items-center gap-2 px-2">
-                  <MailIcon />
-                  <p className="text-teal-500 text-base font-normal">Email</p>
-                </div>
-              </th>
-
-              <th>
-                <div className="flex items-center gap-2 px-2">
-                  <PhoneIcon />
-                  <p className="text-teal-500 text-base font-normal">
-                    Téléphone
-                  </p>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((item, idx) => (
-              <tr
-                key={idx}
-                className="w-full h-14 flex items-center justify-between bg-white px-2  mb-8"
-              >
-                <td>
-                  <div className="flex items-center gap-3">
-                    <input type="checkbox" className="block h-6 w-12" />
-                    <Image
-                      src={item.logo}
-                      width={54}
-                      height={54}
-                      alt="restorant logo"
-                      priority
-                      className="rounded-full aspect-auto border-[1px] border-orange-300"
-                    />
-                    <p>
-                      <Link href={`/fournisseurs/${item.id}`}>{item.name}</Link>
-                    </p>
-                  </div>
-                </td>
-                <td>{item.address}</td>
-                <td>{item.mail}</td>
-                <td>{item.phone}</td>
-              </tr>
-            ))}
-
-            {items.map((item, idx) => (
-              <tr
-                key={idx}
-                className="w-full h-14 flex items-center justify-between bg-white px-2  mb-8"
-              >
-                <td>
-                  <div className="flex items-center gap-3">
-                    <input type="checkbox" className="block h-6 w-12" />
-                    <Image
-                      src={item.logo}
-                      width={54}
-                      height={54}
-                      alt="restorant logo"
-                      priority
-                      className="rounded-full aspect-auto border-[1px] border-orange-300"
-                    />
-                    <p>
-                      <Link href={`/fournisseurs/${item.id}`}>{item.name}</Link>
-                    </p>
-                  </div>
-                </td>
-                <td>{item.address}</td>
-                <td>{item.mail}</td>
-                <td>{item.phone}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <SupplierList suppliers={items} />
       </div>
 
       {/** Mobile & Tablets */}

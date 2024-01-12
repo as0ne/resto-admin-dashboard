@@ -14,9 +14,9 @@ const Button = ({ path, label, Icon, color }: Props) => {
   return (
     <button
       onClick={() => router.push(path)}
-      className={`lg:w-full flex items-center gap-2 ${color} text-white text-base font-semibold rounded-md lg:p-1`}
+      className={`lg:w-full rounded-md p-2 px-[10px] lg:p-[4px] items-center flex gap-2 ${color} text-white text-base font-semibold rounded-md lg:p-1`}
     >
-      <Icon className="w-12 h-12 lg:w-8 lg:h-8" />
+      <Icon />
       <p className="hidden lg:flex">{label}</p>
     </button>
   );

@@ -7,6 +7,7 @@ import Details from "./components/Details";
 import { useState } from "react";
 import Selector from "./components/Selector";
 import { ChatIcon, DeleteIcon, SeeIcon } from "@/public/icons";
+import UsersList from "./components/UsersList";
 
 const DetailPage = () => {
   const [showAdminInfo, setShowAdminInfo] = useState(true);
@@ -38,63 +39,72 @@ const DetailPage = () => {
 
   const users = [
     {
+      id: 1,
       name: "Mohammed",
       role: "Admin",
     },
     {
+      id: 2,
       name: "Mohammed",
       role: "Admin",
     },
     {
+      id: 3,
       name: "Mohammed",
       role: "Admin",
     },
     {
+      id: 4,
       name: "Mohammed",
       role: "Admin",
     },
     {
+      id: 5,
       name: "Mohammed",
       role: "Admin",
     },
     {
+      id: 6,
       name: "Mohammed",
       role: "Admin",
     },
     {
+      id: 7,
       name: "Mohammed",
       role: "Admin",
     },
     {
+      id: 8,
       name: "Mohammed",
       role: "Admin",
     },
     {
+      id: 9,
       name: "Abdourahman",
       role: "Sous admin",
     },
     {
+      id: 10,
       name: "Meriem",
       role: "Gérante",
     },
   ];
 
   return (
-    <div className="w-full bg-sky-100 px-1 text-[13px] sm:max-lg:text-base lg:px-8 overflow-hidden">
+    <div className="w-full bg-sky-100 p-2 text-[13px] sm:max-lg:text-base lg:px-8 overflow-hidden">
       <PageHeader />
-      <div className="w-full">
-        <div className="hidden max-w-2xl mx-auto lg:flex items-center gap-4 text-base font-bold mb-6">
+      <div className="w-full lg:max-w-3xl lg:mx-auto  ">
+        <div className="hidden lg:flex items-center gap-4 text-base font-bold mb-6">
           <Image
             src={achibest}
             alt="Client"
-            height={100}
-            width={100}
+            height={80}
+            width={80}
             className="rounded-full ring-1 ring-yellow-200"
           />
           <p>Achibest</p>
         </div>
-
-        <div className="lg:max-w-2xl mx-auto mb-6 flex items-center text-base justify-center overflow-x-auto gap-4 lg:px-2">
+        <div className="w-full mb-6 flex items-center text-base overflow-x-auto gap-4 lg:pl-0 px-2">
           <Selector
             color={adminSelectorBg}
             onClick={() => {
@@ -146,8 +156,7 @@ const DetailPage = () => {
             label="Liste des utilisateurs"
           />
         </div>
-
-        <div className="w-full lg:max-w-2xl mx-auto shadow-md lg:shadow-none relative lg:static lg:rounded-md bg-white flex flex-col lg:flex-row items-center lg:items-start lg:gap-14 mt-16 lg:mt-0 px-4 py-4">
+        <div className="w-full h-[calc(100vh-420px)] shadow-md lg:shadow-none relative lg:static lg:rounded-md bg-white flex flex-col lg:flex-row items-center lg:items-start lg:gap-14 lg:justify-start mt-16 lg:mt-0 p-4">
           {!showUsersList && (
             <Image
               src={profilPic}
@@ -163,43 +172,13 @@ const DetailPage = () => {
               alt="Picture"
               height={90}
               width={90}
-              className="rounded-md hidden lg:block"
+              className="rounded-3xl hidden lg:block"
             />
           )}
 
           {showAdminInfo && <Details details={adminDetails} />}
           {showClientInfo && <Details details={clientDetails} />}
-          {showUsersList && (
-            <div className="w-full max-h-[calc(100vh-120px)] lg:max-h-[calc(100vh-400px)] lg:pb-10 overflow-y-auto flex flex-col items-center">
-              {users.map((user, idx) => {
-                return (
-                  <div
-                    key={user.name}
-                    className="w-full p-2 flex items-center justify-between gap-20 rounded-md shadow-md shadow-slate-300 mb-2"
-                  >
-                    <div className="flex items-start gap-4 text-base font-semibold">
-                      <Image
-                        src={profilPic}
-                        alt="user"
-                        height={70}
-                        width={70}
-                        className="rounded-xl"
-                      />
-                      <div>
-                        <p className="text-slate-600">{user.name}</p>
-                        <p className="text-teal-600 font-normal">{user.role}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <SeeIcon fill="#0f766e" />
-                      <DeleteIcon fill="red" className="w-[18px] h-[18px]" />
-                      <ChatIcon fill="#94a3b8" />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
+          {showUsersList && <UsersList users={users} />}
         </div>
       </div>
     </div>

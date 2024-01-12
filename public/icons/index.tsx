@@ -123,9 +123,9 @@ export const EditIcon = ({ className, fill }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="20"
+      height="28"
       viewBox="0 -960 960 960"
-      width="20"
+      width="28"
       fill="white"
       className={className}
     >
@@ -138,9 +138,9 @@ export const AddIcon = ({ className }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="20"
+      height="28"
       viewBox="0 -960 960 960"
-      width="20"
+      width="28"
       fill="white"
       className={className}
     >
