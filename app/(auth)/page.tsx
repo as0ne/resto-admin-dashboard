@@ -8,15 +8,15 @@ import { useRouter } from "next/navigation";
 
 const Login = () => {
   const { push } = useRouter();
-  const nameRef = useRef<HTMLInputElement | any>("");
+  const emailRef = useRef<HTMLInputElement | any>("");
   const passwordRef = useRef<HTMLInputElement | any>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(nameRef.current);
+    console.log(emailRef.current);
     console.log(passwordRef.current);
 
-    if (nameRef.current.trim() && passwordRef.current.trim())
+    if (emailRef.current.trim() && passwordRef.current.trim())
       push("/categories");
   };
 
@@ -83,23 +83,23 @@ const Login = () => {
             <div className="w-full lg:w-3/4 mb-12">
               <label
                 htmlFor="username"
-                className="text-base text-black font-medium"
+                className="text-base text-black font-medium mb-2"
               >
-                Nom d&apos;utilisateur
+                Email
               </label>
               <input
-                ref={nameRef}
-                onChange={(e) => (nameRef.current = e.target.value)}
+                ref={emailRef}
+                onChange={(e) => (emailRef.current = e.target.value)}
                 className="bg-slate-100 w-full p-4 outline-none text-base text-black font-medium"
-                type="text"
-                id="username"
+                type="email"
+                id="email"
                 required
               />
             </div>
             <div className="w-full lg:w-3/4 mb-12">
               <label
                 htmlFor="password"
-                className="text-base text-black font-medium"
+                className="text-base text-black font-medium mb-2"
               >
                 Mot de passe
               </label>

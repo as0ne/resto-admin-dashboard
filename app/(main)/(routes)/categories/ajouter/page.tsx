@@ -34,6 +34,7 @@ const AddCategory = () => {
       </button>
       <form
         onSubmit={handleSubmit}
+        encType="multipart/form-data"
         className="w-full flex flex-col justify-between items-center lg:items-center max-h-[calc(100vh-300px)] lg:max-h-full pb-4 overflow-y-auto"
       >
         <div className="w-full flex flex-col lg:flex-row items-center lg:items-stretch mb-16 lg:mb-0">
@@ -72,6 +73,7 @@ const AddCategory = () => {
                 onChange={(e) => (parentRef.current = e.target.value)}
                 type="text"
                 id="parent"
+                name="image"
                 className="w-full lg:w-4/5 p-3 outline-none"
               />
             </div>
